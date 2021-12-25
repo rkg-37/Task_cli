@@ -1,0 +1,27 @@
+{
+  "name": "task_cli",
+  "version": "1.0.0",
+  "description": "command line task performer",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "cli",
+    "javascript",
+    "shell",
+    "node"
+  ],
+  "author": "rajkamal gupta",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
