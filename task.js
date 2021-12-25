@@ -100,6 +100,7 @@ async function processLineByLine_del(file_name, num) {
   fs.writeFile("task.txt", data, (err) => {
     if (err) throw err;
   });
+  console.log("task deleted : " + task_del);
 }
 
 // function to read file line by line
@@ -111,11 +112,13 @@ async function processLineByLine(file_name, message) {
     crlfDelay: Infinity,
   });
   let count = 0;
+  let print = "";
   for await (const line of rl) {
-    //console.log(`${message}\t${chalk.yellow(line)} `);
+    print = print + `${message}  ${chalk.yellow(line)}\n`;
     count++;
   }
-  console.log(`${message}\t : ${count} `);
+  console.log(`${message} ${count} `);
+  log(print);
 }
 
 // function to read file line by line
@@ -167,6 +170,7 @@ async function processLineByLine_done(file_name, num) {
   // complete write
   task_done = "\n" + task_done.trim();
   fs.appendFileSync("completed.txt", task_done);
+  log("completed task : " + task_done);
   task_done = "";
 }
 
